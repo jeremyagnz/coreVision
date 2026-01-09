@@ -71,8 +71,7 @@ section {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    opacity: 0;
-    transform: translateY(50px);
+    /* GSAP will animate from opacity 0 if loaded */
 }
 
 .hero-vision {
@@ -80,8 +79,7 @@ section {
     font-weight: 300;
     letter-spacing: 0.15em;
     margin-top: 10px;
-    opacity: 0;
-    transform: translateY(30px);
+    /* GSAP will animate from opacity 0 if loaded */
 }
 
 .hero-tagline {
@@ -89,9 +87,8 @@ section {
     font-weight: 300;
     letter-spacing: 0.2em;
     margin-top: 40px;
-    opacity: 0;
-    transform: translateY(20px);
     text-transform: uppercase;
+    /* GSAP will animate from opacity 0 if loaded */
 }
 
 .hero-scroll {
@@ -101,7 +98,7 @@ section {
     transform: translateX(-50%);
     z-index: 4;
     text-align: center;
-    opacity: 0;
+    /* GSAP will animate from opacity 0 if loaded */
 }
 
 .hero-scroll-text {
@@ -138,8 +135,7 @@ section {
 }
 
 .about-content {
-    opacity: 0;
-    transform: translateX(-50px);
+    /* Animation states removed - GSAP will handle */
 }
 
 .section-header {
@@ -200,8 +196,7 @@ section {
 
 .about-image {
     position: relative;
-    opacity: 0;
-    transform: translateX(50px);
+    /* Animation states removed - GSAP will handle */
 }
 
 .about-image-wrapper {
@@ -268,8 +263,7 @@ section {
     border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
-    opacity: 0;
-    transform: translateY(50px);
+    /* Animation states removed - GSAP will handle */
 }
 
 .project-card:nth-child(1) {
