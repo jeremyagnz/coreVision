@@ -1,0 +1,12 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradEvent1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2a3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1d25;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#gradEvent1)"/>
+  <circle cx="960" cy="540" r="200" fill="none" stroke="#b6410f" stroke-width="6" stroke-dasharray="20,10"/>
+  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="80" fill="#fff" text-anchor="middle" dominant-baseline="middle">🎵</text>
+  <text x="50%" y="70%" font-family="Arial, sans-serif" font-size="36" fill="#b6410f" text-anchor="middle" dominant-baseline="middle">Soirée Live</text>
+</svg>
