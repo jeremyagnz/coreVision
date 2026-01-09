@@ -1,0 +1,11 @@
+<svg width="720" height="1280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradInsta3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fd1d1d;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e1306c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c13584;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="720" height="1280" fill="url(#gradInsta3)"/>
+  <polygon points="360,540 460,600 460,680 360,740 260,680 260,600" fill="#fff" opacity="0.2"/>
+</svg>
