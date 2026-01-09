@@ -53,10 +53,16 @@
 
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+
     /* General spacing */
     section {
         padding: 60px 20px;
         min-height: auto;
+        overflow-x: hidden;
     }
 
     /* Navigation */
@@ -101,6 +107,15 @@
         gap: 40px;
     }
 
+    .about-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-image-wrapper {
+        max-width: 100%;
+    }
+
     .section-title {
         font-size: clamp(32px, 8vw, 48px);
     }
@@ -121,7 +136,7 @@
     }
 
     .about-image-wrapper::before {
-        transform: translate(10px, 10px);
+        display: none;
     }
 
     /* Projects section */
