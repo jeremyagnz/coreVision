@@ -4,45 +4,47 @@
  */
 
 export function initCarousel() {
-    const carousel = document.querySelector('.instagram__carousel');
-    const items = document.querySelectorAll('.carousel-item');
-    const prevBtn = document.querySelector('.carousel-control.prev');
-    const nextBtn = document.querySelector('.carousel-control.next');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const carouselPrev = document.querySelector('.carousel-control.prev');
+    const carouselNext = document.querySelector('.carousel-control.next');
     
-    if (!carousel || items.length === 0) return;
+    if (!carouselItems || carouselItems.length === 0) return;
 
-    let currentIndex = 0;
-    const totalItems = items.length;
-    const radius = 450; // Radius of the 3D circle
-    const angleStep = (2 * Math.PI) / totalItems;
-    let autoRotateInterval;
+    let currentIndex = Math.floor(carouselItems.length / 2); // Start in the middle
+    let carouselInterval;
 
     function updateCarousel() {
-        items.forEach((item, index) => {
-            const angle = angleStep * (index - currentIndex);
-            const x = Math.sin(angle) * radius;
-            const z = Math.cos(angle) * radius - radius;
-            const scale = 0.7 + (Math.cos(angle) * 0.3);
-            const opacity = 0.4 + (Math.cos(angle) * 0.6);
+        carouselItems.forEach((item, i) => {
+            const offset = i - currentIndex;
+            const absOffset = Math.abs(offset);
             
-            item.style.transform = `
-                translateX(${x}px) 
-                translateZ(${z}px) 
-                scale(${scale})
-            `;
+            let translateX = offset * 320;
+            let translateZ = -absOffset * 150;
+            let rotateY = offset * -15;
+            let scale = 1 - absOffset * 0.15;
+            let opacity = 1 - absOffset * 0.25;
+            let blur = absOffset * 2;
+            
+            if (absOffset > 3) {
+                opacity = 0;
+                scale = 0.5;
+            }
+            
+            item.style.transform = `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
             item.style.opacity = opacity;
-            item.style.zIndex = Math.round(scale * 100);
-
+            item.style.filter = `blur(${blur}px)`;
+            item.style.zIndex = 10 - absOffset;
+            
             // Pause all videos
             const video = item.querySelector('video');
             if (video) {
                 video.pause();
             }
 
-            // Play video of active item
-            if (index === currentIndex) {
+            // Active state - play video of active item
+            if (i === currentIndex) {
                 item.classList.add('active');
-                if (video && video.paused) {
+                if (video) {
                     video.play().catch(() => {
                         // Autoplay might be blocked
                     });
@@ -54,43 +56,46 @@ export function initCarousel() {
     }
 
     function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalItems;
+        currentIndex = (currentIndex + 1) % carouselItems.length;
         updateCarousel();
     }
 
     function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
         updateCarousel();
     }
 
     function startAutoRotate() {
-        autoRotateInterval = setInterval(nextSlide, 4000);
+        carouselInterval = setInterval(nextSlide, 4000);
     }
 
     function stopAutoRotate() {
-        clearInterval(autoRotateInterval);
+        clearInterval(carouselInterval);
     }
 
     // Event listeners
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            stopAutoRotate();
-            setTimeout(startAutoRotate, 8000); // Restart after 8s
-        });
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
+    if (carouselPrev) {
+        carouselPrev.addEventListener('click', () => {
             prevSlide();
             stopAutoRotate();
             setTimeout(startAutoRotate, 8000); // Restart after 8s
         });
     }
 
+    if (carouselNext) {
+        carouselNext.addEventListener('click', () => {
+            nextSlide();
+            stopAutoRotate();
+            setTimeout(startAutoRotate, 8000); // Restart after 8s
+        });
+    }
+
     // Pause on hover
-    carousel.addEventListener('mouseenter', stopAutoRotate);
-    carousel.addEventListener('mouseleave', startAutoRotate);
+    const carouselContainer = document.querySelector('.carousel-container, .instagram__carousel-wrapper');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', stopAutoRotate);
+        carouselContainer.addEventListener('mouseleave', startAutoRotate);
+    }
 
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
@@ -109,16 +114,18 @@ export function initCarousel() {
     let touchStartX = 0;
     let touchEndX = 0;
 
-    carousel.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        stopAutoRotate();
-    });
+    if (carouselContainer) {
+        carouselContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoRotate();
+        });
 
-    carousel.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-        setTimeout(startAutoRotate, 8000);
-    });
+        carouselContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            setTimeout(startAutoRotate, 8000);
+        });
+    }
 
     function handleSwipe() {
         if (touchEndX < touchStartX - 50) {

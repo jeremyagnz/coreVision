@@ -14,9 +14,20 @@ import { initFilters } from './filters.js';
  */
 function initPreloader() {
     const preloader = document.querySelector('.preloader');
-    const preloaderBar = document.querySelector('.preloader__bar');
+    const preloaderLogo = document.querySelector('.preloader__logo, .preloader-logo');
+    const preloaderBar = document.querySelector('.preloader__bar, .preloader-progress');
     
-    if (!preloader || !preloaderBar) return;
+    if (!preloader) return;
+
+    // Animate logo
+    if (preloaderLogo && typeof gsap !== 'undefined') {
+        gsap.to(preloaderLogo, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out'
+        });
+    }
 
     let progress = 0;
     const duration = 2000; // 2 seconds
@@ -33,11 +44,15 @@ function initPreloader() {
             
             // Hide preloader after completion
             setTimeout(() => {
-                preloader.classList.add('hidden');
+                if (preloader) {
+                    preloader.classList.add('hidden');
+                }
                 
                 // Remove from DOM after transition
                 setTimeout(() => {
-                    preloader.remove();
+                    if (preloader) {
+                        preloader.remove();
+                    }
                 }, 600);
                 
                 // Initialize animations after preloader
@@ -45,7 +60,17 @@ function initPreloader() {
             }, 500);
         }
         
-        preloaderBar.style.transform = `scaleX(${progress / 100})`;
+        if (preloaderBar) {
+            if (typeof gsap !== 'undefined') {
+                gsap.to(preloaderBar, {
+                    scaleX: progress / 100,
+                    duration: 0.1,
+                    ease: 'none'
+                });
+            } else {
+                preloaderBar.style.transform = `scaleX(${progress / 100})`;
+            }
+        }
     }, interval);
 }
 

@@ -6,15 +6,16 @@
 /* Scroll Pulse Animation */
 @keyframes scrollPulse {
     0%, 100% {
-        opacity: 0.5;
-        transform: translateY(0);
+        opacity: 0.3;
+        transform: scaleY(0.5);
     }
     50% {
         opacity: 1;
-        transform: translateY(10px);
+        transform: scaleY(1);
     }
 }
 
+.hero-scroll-line,
 .hero__scroll-line {
     animation: scrollPulse 2s ease-in-out infinite;
 }

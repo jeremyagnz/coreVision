@@ -3,6 +3,43 @@
  * Composants UI réutilisables (navigation, boutons, cartes, etc.)
  */
 
+/* Custom Cursor */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: var(--z-cursor);
+    transition: transform 0.15s ease-out, background 0.2s, border-color 0.2s;
+    mix-blend-mode: difference;
+}
+
+.cursor.hover {
+    transform: scale(1.5);
+    background: var(--fire);
+    border-color: var(--fire);
+    mix-blend-mode: normal;
+}
+
+.cursor.hover-video {
+    transform: scale(2.5);
+    background: rgba(182, 65, 15, 0.9);
+    border-color: var(--fire);
+    mix-blend-mode: normal;
+}
+
+.cursor.hover-video::after {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    font-size: 10px;
+    color: white;
+}
+
 /* Navigation */
 .nav {
     position: fixed;
@@ -10,51 +47,81 @@
     left: 0;
     right: 0;
     z-index: var(--z-nav);
-    padding: var(--spacing-md);
+    padding: 30px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    mix-blend-mode: difference;
 }
 
-.nav__logo {
-    font-size: 1.5rem;
+.nav__logo,
+.nav-logo {
+    font-size: 24px;
     font-weight: 900;
-    color: var(--white);
     letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--fire), var(--sunset));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    cursor: pointer;
 }
 
-.nav__burger {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
+.nav__burger,
+.nav-burger {
+    width: 30px;
+    height: 20px;
+    position: relative;
     cursor: pointer;
     z-index: var(--z-menu) + 1;
 }
 
-.nav__burger-line {
-    width: 30px;
+.nav__burger span,
+.nav__burger-line,
+.nav-burger span {
+    position: absolute;
+    width: 100%;
     height: 2px;
     background: var(--white);
-    transition: all var(--transition-normal) var(--ease-out-expo);
-    transform-origin: center;
+    left: 0;
+    transition: all 0.3s var(--ease-out-expo);
 }
 
-.nav__burger.active .nav__burger-line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+.nav__burger span:nth-child(1),
+.nav__burger-line:nth-child(1),
+.nav-burger span:nth-child(1) { 
+    top: 0; 
 }
 
-.nav__burger.active .nav__burger-line:nth-child(2) {
+.nav__burger span:nth-child(2),
+.nav__burger-line:nth-child(2),
+.nav-burger span:nth-child(2) { 
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
+.nav__burger span:nth-child(3),
+.nav__burger-line:nth-child(3),
+.nav-burger span:nth-child(3) { 
+    bottom: 0; 
+}
+
+.nav__burger.active span:nth-child(1),
+.nav__burger.active .nav__burger-line:nth-child(1),
+.nav-burger.active span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.nav__burger.active span:nth-child(2),
+.nav__burger.active .nav__burger-line:nth-child(2),
+.nav-burger.active span:nth-child(2) {
     opacity: 0;
-    transform: scaleX(0);
 }
 
-.nav__burger.active .nav__burger-line:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+.nav__burger.active span:nth-child(3),
+.nav__burger.active .nav__burger-line:nth-child(3),
+.nav-burger.active span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
 }
 
 /* Menu Fullscreen */
@@ -68,16 +135,17 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--transition-slow) var(--ease-out-expo);
+    visibility: hidden;
+    transition: all 0.5s var(--ease-out-expo);
 }
 
 .menu-fullscreen.active {
     opacity: 1;
-    pointer-events: all;
+    visibility: visible;
 }
 
-.menu__nav {
+.menu__nav,
+.menu-items {
     text-align: center;
 }
 
@@ -87,28 +155,27 @@
     gap: var(--spacing-md);
 }
 
-.menu__link {
-    font-size: clamp(2rem, 5vw, 4rem);
-    font-weight: 900;
+.menu__link,
+.menu-item {
+    display: block;
+    font-size: 48px;
+    font-weight: 300;
     color: var(--white);
     position: relative;
-    display: inline-block;
-    transition: color var(--transition-normal);
-    opacity: 0;
-    transform: translateY(20px);
+    margin: 20px 0;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    transform: translateY(30px);
 }
 
-.menu-fullscreen.active .menu__link {
-    animation: menuItemFadeIn 0.6s var(--ease-out-expo) forwards;
+.menu-fullscreen.active .menu__link,
+.menu-fullscreen.active .menu-item {
+    transform: translateY(0);
 }
 
-.menu__link:nth-child(1) { animation-delay: 0.1s; }
-.menu__link:nth-child(2) { animation-delay: 0.2s; }
-.menu__link:nth-child(3) { animation-delay: 0.3s; }
-.menu__link:nth-child(4) { animation-delay: 0.4s; }
-.menu__link:nth-child(5) { animation-delay: 0.5s; }
-
-.menu__link:hover {
+.menu__link:hover,
+.menu-item:hover {
+    opacity: 1;
     color: var(--fire);
 }
 
@@ -127,49 +194,22 @@
     width: 100%;
 }
 
+.menu-social {
+    margin-top: 60px;
+    font-size: 14px;
+    opacity: 0.5;
+}
+
 /* Progress Bar */
 .progress-bar {
     position: fixed;
     top: 0;
     left: 0;
     height: 3px;
-    background: linear-gradient(to right, var(--fire), var(--sunset));
+    background: linear-gradient(90deg, var(--fire), var(--sunset));
     z-index: var(--z-progress);
-    transform-origin: left;
-    transform: scaleX(0);
-}
-
-/* Custom Cursor */
-.cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--white);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: var(--z-cursor);
-    transition: transform var(--transition-fast), border-color var(--transition-fast);
-    mix-blend-mode: difference;
-}
-
-.cursor.hover {
-    transform: scale(1.5);
-    border-color: var(--fire);
-}
-
-.cursor.hover-video {
-    transform: scale(3);
-    border-color: var(--fire);
-}
-
-.cursor.hover-video::before {
-    content: '▶';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--fire);
-    font-size: 12px;
+    width: 0%;
+    transition: width 0.1s ease-out;
 }
 
 /* Preloader */
@@ -190,27 +230,35 @@
     visibility: hidden;
 }
 
-.preloader__logo {
-    font-size: 4rem;
+.preloader__logo,
+.preloader-logo {
+    font-size: 80px;
     font-weight: 900;
-    background: linear-gradient(135deg, var(--fire) 0%, var(--sunset) 100%);
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, var(--fire), var(--sunset));
     -webkit-background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: var(--spacing-lg);
+    background-clip: text;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
-.preloader__progress {
-    width: 300px;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+.preloader__progress,
+.preloader-bar {
+    width: 200px;
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+    margin-top: 30px;
+    border-radius: 2px;
     overflow: hidden;
 }
 
-.preloader__bar {
+.preloader__bar,
+.preloader-progress {
     height: 100%;
-    background: linear-gradient(to right, var(--fire), var(--sunset));
+    width: 0%;
+    background: linear-gradient(90deg, var(--fire), var(--sunset));
+    border-radius: 2px;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.1s linear;
@@ -252,22 +300,21 @@
 
 /* Filter Buttons */
 .filter-btn {
-    padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--white);
-    border-radius: 50px;
-    font-size: 0.95rem;
+    padding: 10px 25px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    font-size: 13px;
     font-weight: 500;
+    background: transparent;
+    color: white;
     cursor: pointer;
-    transition: all var(--transition-normal);
+    transition: all 0.3s ease;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: var(--fire);
     border-color: var(--fire);
-    transform: translateY(-2px);
+    background: var(--fire);
 }
 
 /* Project Card */

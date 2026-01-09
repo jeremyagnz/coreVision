@@ -5,49 +5,30 @@
 
 /* Tablette (max-width: 1024px) */
 @media (max-width: 1024px) {
-    :root {
-        --spacing-xl: 4rem;
-        --spacing-lg: 3rem;
+    section {
+        padding: 100px 40px;
     }
 
-    /* Hero */
-    .hero__logo {
-        font-size: clamp(2.5rem, 8vw, 6rem);
+    .about-container {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .hero__tagline {
-        font-size: clamp(0.95rem, 2vw, 1.25rem);
-    }
-
-    /* About */
-    .about__grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-
-    .about__image {
-        max-width: 500px;
-        margin: 0 auto;
-    }
-
-    .about__values {
-        grid-template-columns: 1fr;
-    }
-
-    /* Projects */
+    .projects-grid,
     .projects__grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: var(--spacing-sm);
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Instagram */
-    .instagram__carousel-wrapper {
-        height: 500px;
+    .project-card:nth-child(1),
+    .project-card:nth-child(4),
+    .project-card:nth-child(7) {
+        grid-column: span 1;
     }
 
-    .carousel-item {
-        width: 250px;
-        height: 350px;
+    .footer__content,
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
     }
 
     /* Footer */
@@ -63,134 +44,32 @@
 
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
-    :root {
-        --spacing-xl: 3rem;
-        --spacing-lg: 2rem;
-        --spacing-md: 1.5rem;
-    }
-
-    /* Container */
-    .container {
-        padding: 0 var(--spacing-sm);
-    }
-
-    /* Section */
     section {
-        padding: var(--spacing-lg) 0;
+        padding: 80px 25px;
     }
 
-    /* Navigation */
     .nav {
-        padding: var(--spacing-sm);
+        padding: 20px 25px;
     }
 
-    .nav__logo {
-        font-size: 1.25rem;
+    .about-container {
+        grid-template-columns: 1fr;
     }
 
-    .nav__burger {
-        width: 35px;
-        height: 35px;
-    }
-
-    .nav__burger-line {
-        width: 25px;
-    }
-
-    /* Hero */
-    .hero {
-        height: 100svh; /* Use svh for mobile browsers */
-    }
-
-    .hero__logo {
-        font-size: clamp(2rem, 10vw, 3.5rem);
-    }
-
-    .hero__tagline {
-        font-size: clamp(0.875rem, 3vw, 1.125rem);
-        padding: 0 var(--spacing-sm);
-    }
-
-    .hero__scroll {
-        bottom: var(--spacing-sm);
-    }
-
-    /* About */
-    .about {
-        padding: var(--spacing-lg) 0;
-    }
-
-    .about__title {
-        font-size: clamp(1.75rem, 8vw, 2.5rem);
-    }
-
-    .about__subtitle {
-        font-size: 1.125rem;
-    }
-
-    .about__text {
-        font-size: 1rem;
-    }
-
-    .about__values {
-        gap: var(--spacing-sm);
-    }
-
-    .value-item {
-        padding: var(--spacing-sm);
-    }
-
-    .value-item__title {
-        font-size: 1.125rem;
-    }
-
-    /* Projects */
-    .projects__title {
-        font-size: clamp(2rem, 8vw, 3rem);
-    }
-
-    .projects__filters {
-        gap: 0.5rem;
-    }
-
-    .filter-btn {
-        padding: 0.625rem 1.25rem;
-        font-size: 0.875rem;
-    }
-
+    .projects-grid,
     .projects__grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
     }
 
     .project-card {
-        aspect-ratio: 16/10;
+        height: 300px;
     }
 
-    .project-card__overlay {
-        opacity: 1; /* Always visible on mobile */
-        background: linear-gradient(to top, rgba(13, 29, 37, 0.95) 0%, transparent 70%);
-    }
-
-    .project-card__title {
-        font-size: 1.25rem;
-    }
-
-    .project-card__description {
-        font-size: 0.875rem;
-    }
-
-    /* Instagram */
-    .instagram__title {
-        font-size: clamp(2rem, 8vw, 3rem);
-    }
-
-    .instagram__subtitle {
-        font-size: 1.125rem;
-    }
-
-    .instagram__carousel-wrapper {
-        height: 400px;
+    .project-card:nth-child(1),
+    .project-card:nth-child(4),
+    .project-card:nth-child(7) {
+        grid-column: span 1;
+        grid-row: span 1;
     }
 
     .carousel-item {
@@ -198,59 +77,23 @@
         height: 300px;
     }
 
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        font-size: 1.25rem;
-    }
-
-    /* CTA */
-    .cta__title {
-        font-size: clamp(2rem, 8vw, 3rem);
-    }
-
-    .cta__text {
-        font-size: 1.125rem;
-    }
-
-    .cta__info {
-        font-size: 1rem;
-    }
-
-    /* Footer */
-    .footer__content {
+    .footer__content,
+    .footer-content {
         grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-        text-align: center;
+        gap: 40px;
     }
 
-    .footer__section ul {
-        align-items: center;
-    }
-
-    /* Buttons */
-    .btn {
-        padding: 0.875rem 2rem;
-        font-size: 0.95rem;
-    }
-
-    /* Menu */
-    .menu__link {
-        font-size: clamp(1.25rem, 6vw, 2.5rem);
-    }
-
-    /* Preloader */
-    .preloader__logo {
-        font-size: 3rem;
-    }
-
-    .preloader__progress {
-        width: 250px;
-    }
-
-    /* Cursor - Hide on touch devices */
     .cursor {
         display: none;
+    }
+
+    body {
+        cursor: auto;
+    }
+
+    .menu__link,
+    .menu-item {
+        font-size: 32px;
     }
 }
 

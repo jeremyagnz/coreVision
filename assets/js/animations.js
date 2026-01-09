@@ -15,10 +15,10 @@ export function initAnimations() {
         gsap.registerPlugin(ScrollTrigger);
     }
 
-    // Hero animations
-    const heroContent = document.querySelector('.hero__content');
+    // Hero animations - Updated class names
+    const heroContent = document.querySelector('.hero-content, .hero__content');
     if (heroContent) {
-        gsap.from('.hero__logo', {
+        gsap.from('.hero-logo, .hero__logo', {
             opacity: 0,
             y: 50,
             duration: 1.2,
@@ -26,15 +26,23 @@ export function initAnimations() {
             ease: 'power3.out'
         });
 
-        gsap.from('.hero__tagline', {
+        gsap.from('.hero-vision', {
             opacity: 0,
             y: 30,
             duration: 1,
-            delay: 0.8,
+            delay: 0.7,
             ease: 'power3.out'
         });
 
-        gsap.from('.hero__scroll', {
+        gsap.from('.hero-tagline, .hero__tagline', {
+            opacity: 0,
+            y: 20,
+            duration: 0.8,
+            delay: 0.9,
+            ease: 'power3.out'
+        });
+
+        gsap.from('.hero-scroll, .hero__scroll', {
             opacity: 0,
             y: 20,
             duration: 0.8,
@@ -44,10 +52,10 @@ export function initAnimations() {
     }
 
     // Hero parallax effect
-    const heroVideo = document.querySelector('.hero__video');
+    const heroVideo = document.querySelector('.hero-video, .hero__video');
     if (heroVideo && typeof ScrollTrigger !== 'undefined') {
-        gsap.to('.hero__video', {
-            yPercent: 20,
+        gsap.to('.hero-video, .hero__video', {
+            scale: 1.2,
             ease: 'none',
             scrollTrigger: {
                 trigger: '.hero',
@@ -57,7 +65,139 @@ export function initAnimations() {
             }
         });
 
-        gsap.to('.hero__content', {
+        gsap.to('.hero-content, .hero__content', {
+            yPercent: 50,
+            opacity: 0,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+    }
+
+    // About section animations
+    if (typeof ScrollTrigger !== 'undefined') {
+        gsap.to('.about-content, .about__content', {
+            scrollTrigger: {
+                trigger: '.about',
+                start: 'top 70%',
+                end: 'top 30%',
+                scrub: 1
+            },
+            opacity: 1,
+            x: 0
+        });
+
+        gsap.to('.about-image, .about__image', {
+            scrollTrigger: {
+                trigger: '.about',
+                start: 'top 70%',
+                end: 'top 30%',
+                scrub: 1
+            },
+            opacity: 1,
+            x: 0
+        });
+    }
+
+    // Projects animations
+    if (typeof ScrollTrigger !== 'undefined') {
+        gsap.from('.projects__header, .projects .section-header', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            scrollTrigger: {
+                trigger: '.projects',
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        // Animate project cards with stagger
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach((card, i) => {
+            gsap.to(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                    end: 'top 60%',
+                    scrub: 1
+                },
+                opacity: 1,
+                y: 0
+            });
+
+            // Video hover
+            const video = card.querySelector('.project-video, video');
+            if (video) {
+                card.addEventListener('mouseenter', () => {
+                    video.play().catch(() => {});
+                });
+                card.addEventListener('mouseleave', () => {
+                    video.pause();
+                    video.currentTime = 0;
+                });
+            }
+        });
+    }
+
+    // Instagram section animations
+    if (typeof ScrollTrigger !== 'undefined') {
+        gsap.from('.instagram__header, .instagram .section-header', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            scrollTrigger: {
+                trigger: '.instagram',
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        gsap.from('.instagram__carousel-wrapper, .carousel-container', {
+            opacity: 0,
+            scale: 0.9,
+            duration: 1,
+            scrollTrigger: {
+                trigger: '.instagram__carousel-wrapper, .carousel-container',
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+    }
+
+    // CTA section animations
+    if (typeof ScrollTrigger !== 'undefined') {
+        gsap.from('.cta__content, .cta-content', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            scrollTrigger: {
+                trigger: '.cta',
+                start: 'top 70%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+    }
+
+    // Footer animations
+    if (typeof ScrollTrigger !== 'undefined') {
+        gsap.from('.footer__section', {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: 'footer',
+                start: 'top 90%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+    }
+}
             yPercent: 50,
             opacity: 0,
             ease: 'none',

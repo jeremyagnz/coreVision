@@ -17,59 +17,36 @@ export function initFilters() {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // Filter projects
+            // Filter projects with GSAP if available
             projectCards.forEach(card => {
                 const category = card.getAttribute('data-category');
                 
                 if (filter === 'all' || category === filter) {
                     // Show card with animation
-                    card.style.display = 'block';
-                    
-                    // Force reflow
-                    void card.offsetWidth;
-                    
-                    // Animate in
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    
-                    setTimeout(() => {
-                        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    if (typeof gsap !== 'undefined') {
+                        gsap.to(card, { 
+                            opacity: 1, 
+                            scale: 1, 
+                            duration: 0.4 
+                        });
+                    } else {
                         card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 10);
+                        card.style.transform = 'scale(1)';
+                    }
                 } else {
-                    // Hide card with animation
-                    card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
+                    // Dim card with animation
+                    if (typeof gsap !== 'undefined') {
+                        gsap.to(card, { 
+                            opacity: 0.2, 
+                            scale: 0.95, 
+                            duration: 0.4 
+                        });
+                    } else {
+                        card.style.opacity = '0.2';
+                        card.style.transform = 'scale(0.95)';
+                    }
                 }
             });
-
-            // Re-animate visible cards with GSAP if available
-            if (typeof gsap !== 'undefined') {
-                const visibleCards = Array.from(projectCards).filter(card => {
-                    const category = card.getAttribute('data-category');
-                    return filter === 'all' || category === filter;
-                });
-
-                gsap.fromTo(visibleCards,
-                    {
-                        opacity: 0,
-                        y: 30
-                    },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.6,
-                        stagger: 0.1,
-                        ease: 'power3.out'
-                    }
-                );
-            }
         });
     });
 

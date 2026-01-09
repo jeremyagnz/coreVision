@@ -58,7 +58,7 @@ export function initNavigation() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
             
-            progressBar.style.transform = `scaleX(${scrollPercentage / 100})`;
+            progressBar.style.width = `${scrollPercentage}%`;
         });
     }
 
