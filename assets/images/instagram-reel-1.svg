@@ -7,6 +7,5 @@
     </linearGradient>
   </defs>
   <rect width="720" height="1280" fill="url(#gradInsta1)"/>
-  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="80" fill="#fff" text-anchor="middle" dominant-baseline="middle">🛹</text>
-  <text x="50%" y="60%" font-family="Arial, sans-serif" font-size="32" fill="#fff" text-anchor="middle" dominant-baseline="middle">Skateboarding</text>
+  <circle cx="360" cy="640" r="120" fill="#fff" opacity="0.2"/>
 </svg>

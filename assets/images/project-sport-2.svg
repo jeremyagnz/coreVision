@@ -7,6 +7,6 @@
   </defs>
   <rect width="1920" height="1080" fill="url(#gradSport2)"/>
   <circle cx="960" cy="540" r="180" fill="none" stroke="#b6410f" stroke-width="8"/>
-  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="80" fill="#fff" text-anchor="middle" dominant-baseline="middle">⚽</text>
-  <text x="50%" y="70%" font-family="Arial, sans-serif" font-size="36" fill="#b6410f" text-anchor="middle" dominant-baseline="middle">Passion Football</text>
+  <circle cx="900" cy="500" r="40" fill="#b6410f" opacity="0.3"/>
+  <circle cx="1020" cy="580" r="40" fill="#b6410f" opacity="0.3"/>
 </svg>

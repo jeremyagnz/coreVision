@@ -7,6 +7,5 @@
     </linearGradient>
   </defs>
   <rect width="720" height="1280" fill="url(#gradInsta3)"/>
-  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="80" fill="#fff" text-anchor="middle" dominant-baseline="middle">🤸</text>
-  <text x="50%" y="60%" font-family="Arial, sans-serif" font-size="32" fill="#fff" text-anchor="middle" dominant-baseline="middle">Parkour</text>
+  <polygon points="360,540 460,600 460,680 360,740 260,680 260,600" fill="#fff" opacity="0.2"/>
 </svg>

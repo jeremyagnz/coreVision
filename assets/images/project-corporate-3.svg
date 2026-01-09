@@ -7,6 +7,5 @@
   </defs>
   <rect width="1920" height="1080" fill="url(#gradCorp3)"/>
   <rect x="680" y="340" width="560" height="400" rx="20" fill="none" stroke="#b6410f" stroke-width="6"/>
-  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="80" fill="#fff" text-anchor="middle" dominant-baseline="middle">💻</text>
-  <text x="50%" y="70%" font-family="Arial, sans-serif" font-size="36" fill="#b6410f" text-anchor="middle" dominant-baseline="middle">Focus Professionnel</text>
+  <rect x="800" y="440" width="320" height="200" rx="8" fill="#b6410f" opacity="0.2"/>
 </svg>
