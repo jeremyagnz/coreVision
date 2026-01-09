@@ -107,11 +107,7 @@
         gap: 40px;
     }
 
-    .about-image {
-        width: 100%;
-        max-width: 100%;
-    }
-
+    .about-image,
     .about-image-wrapper {
         max-width: 100%;
     }
