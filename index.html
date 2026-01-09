@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Meta de base -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Básico -->
+    <title>CORE Vision | Alexandre Martins - Vidéaste & Photographe à Lyon</title>
+    <meta name="description" content="CORE Vision - Films et photographie professionnelle par Alexandre Martins, ancien marin-pompier. Spécialisé en sport, corporate et événementiel à Lyon, France.">
+    <meta name="keywords" content="vidéaste Lyon, photographe Lyon, films corporate, photographie sport, Alexandre Martins, CORE Vision, événementiel Lyon">
+    <meta name="author" content="Alexandre Martins">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://corevision.fr/">
+    <meta property="og:title" content="CORE Vision | Alexandre Martins - Vidéaste & Photographe">
+    <meta property="og:description" content="Au cœur de l'action, l'essentiel de l'émotion. Films et photographie professionnelle à Lyon.">
+    <meta property="og:image" content="https://corevision.fr/assets/images/og-image.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="CORE Vision">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://corevision.fr/">
+    <meta property="twitter:title" content="CORE Vision | Alexandre Martins - Vidéaste & Photographe">
+    <meta property="twitter:description" content="Au cœur de l'action, l'essentiel de l'émotion. Films et photographie professionnelle à Lyon.">
+    <meta property="twitter:image" content="https://corevision.fr/assets/images/og-image.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://corevision.fr/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎬</text></svg>">
+    
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets in order -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "CORE Vision",
+      "description": "Films et photographie professionnelle",
+      "url": "https://corevision.fr",
+      "telephone": "+33668918589",
+      "email": "contact@corevision.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lyon",
+        "addressCountry": "FR"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Alexandre Martins",
+        "jobTitle": "Vidéaste & Photographe",
+        "sameAs": "https://instagram.com/alexmrts_visuals"
+      },
+      "priceRange": "€€",
+      "image": "https://corevision.fr/assets/images/og-image.jpg"
+    }
+    </script>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" role="progressbar" aria-label="Progression de lecture"></div>
+    
+    <!-- Preloader -->
+    <div class="preloader" role="status" aria-label="Chargement">
+        <div class="preloader__logo">CORE</div>
+        <div class="preloader__progress">
+            <div class="preloader__bar"></div>
+        </div>
+    </div>
+    
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="nav" role="navigation" aria-label="Navigation principale">
+            <a href="#hero" class="nav__logo" aria-label="Retour à l'accueil">CORE</a>
+            <button class="nav__burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span class="nav__burger-line"></span>
+                <span class="nav__burger-line"></span>
+                <span class="nav__burger-line"></span>
+            </button>
+        </nav>
+        
+        <!-- Menu Fullscreen -->
+        <div class="menu-fullscreen" role="dialog" aria-label="Menu de navigation">
+            <nav class="menu__nav">
+                <ul class="menu__list" role="list">
+                    <li><a href="#hero" class="menu__link">Accueil</a></li>
+                    <li><a href="#about" class="menu__link">À propos</a></li>
+                    <li><a href="#projects" class="menu__link">Projets</a></li>
+                    <li><a href="#instagram" class="menu__link">Instagram</a></li>
+                    <li><a href="#contact" class="menu__link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero" aria-label="Section principale">
+            <video 
+                class="hero__video" 
+                src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-city-traffic-at-night-11-large.mp4"
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                aria-hidden="true"
+            ></video>
+            <div class="hero__overlay" aria-hidden="true"></div>
+            <div class="hero__grain" aria-hidden="true"></div>
+            
+            <div class="hero__content">
+                <h1 class="hero__logo">CORE Vision</h1>
+                <p class="hero__tagline">Au cœur de l'action, l'essentiel de l'émotion</p>
+                <a href="#about" class="btn btn-primary">Découvrir</a>
+            </div>
+            
+            <div class="hero__scroll" aria-label="Faire défiler vers le bas">
+                <span>Scroll</span>
+                <div class="hero__scroll-line" aria-hidden="true"></div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="about" aria-label="À propos">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__image">
+                        <img 
+                            src="https://i.pravatar.cc/800?img=12" 
+                            alt="Alexandre Martins - Vidéaste et Photographe professionnel"
+                            loading="lazy"
+                        >
+                    </div>
+                    
+                    <div class="about__content">
+                        <h2 class="about__title">Alexandre Martins</h2>
+                        <p class="about__subtitle">Vidéaste & Photographe</p>
+                        
+                        <p class="about__text">
+                            Ancien marin-pompier de Marseille pendant 4 ans, j'ai appris la discipline, 
+                            le courage et l'excellence dans l'action. Aujourd'hui, je capture l'intensité 
+                            et l'authenticité à travers l'objectif.
+                        </p>
+                        
+                        <p class="about__text">
+                            Basé à Lyon, je me spécialise dans le sport, le corporate et l'événementiel. 
+                            Chaque projet est une opportunité de raconter une histoire unique et de saisir 
+                            l'essentiel de l'émotion.
+                        </p>
+                        
+                        <div class="about__values">
+                            <div class="value-item">
+                                <h3 class="value-item__title">Authenticité</h3>
+                                <p class="value-item__text">
+                                    Capturer la vérité de chaque instant, sans artifice ni compromis.
+                                </p>
+                            </div>
+                            
+                            <div class="value-item">
+                                <h3 class="value-item__title">Loyauté</h3>
+                                <p class="value-item__text">
+                                    Un engagement total envers mes clients et leurs visions.
+                                </p>
+                            </div>
+                            
+                            <div class="value-item">
+                                <h3 class="value-item__title">Excellence</h3>
+                                <p class="value-item__text">
+                                    La quête constante de la perfection dans chaque création.
+                                </p>
+                            </div>
+                            
+                            <div class="value-item">
+                                <h3 class="value-item__title">Passion</h3>
+                                <p class="value-item__text">
+                                    L'amour du métier qui transparaît dans chaque image.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="projects" aria-label="Projets">
+            <div class="container">
+                <div class="projects__header">
+                    <h2 class="projects__title">Projets</h2>
+                    
+                    <div class="projects__filters" role="group" aria-label="Filtrer les projets">
+                        <button class="filter-btn active" data-filter="all">Tous</button>
+                        <button class="filter-btn" data-filter="sport">Sport</button>
+                        <button class="filter-btn" data-filter="corporate">Corporate</button>
+                        <button class="filter-btn" data-filter="evenementiel">Événementiel</button>
+                    </div>
+                </div>
+                
+                <div class="projects__grid">
+                    <!-- Sport Projects -->
+                    <article class="project-card" data-category="sport">
+                        <video 
+                            src="https://assets.mixkit.co/videos/preview/mixkit-basketball-player-making-a-basket-in-a-game-39395-large.mp4"
+                            muted 
+                            loop 
+                            playsinline
+                            loading="lazy"
+                            aria-label="Projet sport - Basketball"
+                        ></video>
+                        <div class="project-card__overlay">
+                            <span class="project-card__category">Sport</span>
+                            <h3 class="project-card__title">Action Basketball</h3>
+                            <p class="project-card__description">
+                                Capturer l'intensité et la dynamique du basketball professionnel.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card" data-category="sport">
+                        <video 
+                            src="https://assets.mixkit.co/videos/preview/mixkit-soccer-ball-on-a-field-2074-large.mp4"
+                            muted 
+                            loop 
+                            playsinline
+                            loading="lazy"
+                            aria-label="Projet sport - Football"
+                        ></video>
+                        <div class="project-card__overlay">
+                            <span class="project-card__category">Sport</span>
+                            <h3 class="project-card__title">Passion Football</h3>
+                            <p class="project-card__description">
+                                L'émotion du sport roi à travers des images percutantes.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card" data-category="sport">
+                        <video 
+                            src="https://assets.mixkit.co/videos/preview/mixkit-man-running-on-a-running-track-1218-large.mp4"
+                            muted 
+                            loop 
+                            playsinline
+                            loading="lazy"
+                            aria-label="Projet sport - Running"
+                        ></video>
+                        <div class="project-card__overlay">
+                            <span class="project-card__category">Sport</span>
+                            <h3 class="project-card__title">Performance Running</h3>
+                            <p class="project-card__description">
+                                La détermination et l'effort dans chaque foulée.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <!-- Corporate Projects -->
+                    <article class="project-card" data-category="corporate">
+                        <video 
+                            src="https://assets.mixkit.co/videos/preview/mixkit-businessmen-working-together-in-an-office-4607-large.mp4"
+                            muted 
+                            loop 
+                            playsinline
+                            loading="lazy"
+                            aria-label="Projet corporate - Bureau"
+                        ></video>
+                        <div class="project-card__overlay">
+                            <span class="project-card__category">Corporate</span>
+                            <h3 class="project-card__title">Excellence Corporate</h3>
+                            <p class="project-card__description">
+                                Films institutionnels qui racontent l'histoire de votre entreprise.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card" data-category="corporate">
+                        <video 
+                            src="https://assets.mixkit.co/videos/preview/mixkit-business-meeting-in-an-office-4628-large.mp4"
+                            muted 
+                            loop 
+                            playsinline
+                            loading="lazy"
+                            aria-label="Projet corporate - Réunion"
+                        ></video>
+                        <div class="project-card__overlay">
+                            <span class="project-card__category">Corporate</span>
+                            <h3 class="project-card__title">Collaboration</h3>
+                            <p class="project-card__description">
+                                Mettre en valeur le travail d'équipe et l'innovation.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card" data-category="corporate">
+                        <video 
+                            src="https://assets.mixkit.co/videos/preview/mixkit-young-businessman-working-on-his-laptop-4629-large.mp4"
+                            muted 
+                            loop 
+                            playsinline
+                            loading="lazy"
+                            aria-label="Projet corporate - Travail"
+                        ></video>
+                        <div class="project-card__overlay">
+                            <span class="project-card__category">Corporate</span>
+                            <h3 class="project-card__title">Focus Professionnel</h3>
+                            <p class="project-card__description">
+                                La concentration et l'expertise au service de la réussite.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <!-- Événementiel Projects -->
+                    <article class="project-card" data-category="evenementiel">
+                        <video 
+                            src="https://assets.mixkit.co/videos/preview/mixkit-dj-working-at-a-party-1241-large.mp4"
+                            muted 
+                            loop 
+                            playsinline
+                            loading="lazy"
+                            aria-label="Projet événementiel - DJ"
+                        ></video>
+                        <div class="project-card__overlay">
+                            <span class="project-card__category">Événementiel</span>
+                            <h3 class="project-card__title">Soirée Live</h3>
+                            <p class="project-card__description">
+                                L'énergie et l'ambiance de vos événements mémorables.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card" data-category="evenementiel">
+                        <video 
+                            src="https://assets.mixkit.co/videos/preview/mixkit-party-with-multicolored-lights-and-people-dancing-4933-large.mp4"
+                            muted 
+                            loop 
+                            playsinline
+                            loading="lazy"
+                            aria-label="Projet événementiel - Fête"
+                        ></video>
+                        <div class="project-card__overlay">
+                            <span class="project-card__category">Événementiel</span>
+                            <h3 class="project-card__title">Célébration</h3>
+                            <p class="project-card__description">
+                                Immortaliser les moments de joie et de convivialité.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card" data-category="evenementiel">
+                        <video 
+                            src="https://assets.mixkit.co/videos/preview/mixkit-conference-audience-1248-large.mp4"
+                            muted 
+                            loop 
+                            playsinline
+                            loading="lazy"
+                            aria-label="Projet événementiel - Conférence"
+                        ></video>
+                        <div class="project-card__overlay">
+                            <span class="project-card__category">Événementiel</span>
+                            <h3 class="project-card__title">Conférence</h3>
+                            <p class="project-card__description">
+                                Capturer l'essence de vos événements professionnels.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Instagram Section -->
+        <section id="instagram" class="instagram" aria-label="Instagram">
+            <div class="container">
+                <div class="instagram__header">
+                    <h2 class="instagram__title">Derniers Reels</h2>
+                    <p class="instagram__subtitle">
+                        Suivez-moi sur 
+                        <a href="https://instagram.com/alexmrts_visuals" target="_blank" rel="noopener noreferrer">
+                            @alexmrts_visuals
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="instagram__carousel-wrapper">
+                    <div class="instagram__carousel">
+                        <div class="carousel-item">
+                            <video 
+                                src="https://assets.mixkit.co/videos/preview/mixkit-skateboarder-performing-a-trick-44481-large.mp4"
+                                muted 
+                                loop 
+                                playsinline
+                                loading="lazy"
+                                aria-label="Reel Instagram 1"
+                            ></video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video 
+                                src="https://assets.mixkit.co/videos/preview/mixkit-bmx-rider-performing-a-trick-44449-large.mp4"
+                                muted 
+                                loop 
+                                playsinline
+                                loading="lazy"
+                                aria-label="Reel Instagram 2"
+                            ></video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video 
+                                src="https://assets.mixkit.co/videos/preview/mixkit-man-doing-parkour-in-the-city-44429-large.mp4"
+                                muted 
+                                loop 
+                                playsinline
+                                loading="lazy"
+                                aria-label="Reel Instagram 3"
+                            ></video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video 
+                                src="https://assets.mixkit.co/videos/preview/mixkit-young-woman-exercising-outdoors-44456-large.mp4"
+                                muted 
+                                loop 
+                                playsinline
+                                loading="lazy"
+                                aria-label="Reel Instagram 4"
+                            ></video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video 
+                                src="https://assets.mixkit.co/videos/preview/mixkit-boxer-training-with-punching-bag-44464-large.mp4"
+                                muted 
+                                loop 
+                                playsinline
+                                loading="lazy"
+                                aria-label="Reel Instagram 5"
+                            ></video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video 
+                                src="https://assets.mixkit.co/videos/preview/mixkit-person-doing-yoga-at-sunset-44452-large.mp4"
+                                muted 
+                                loop 
+                                playsinline
+                                loading="lazy"
+                                aria-label="Reel Instagram 6"
+                            ></video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video 
+                                src="https://assets.mixkit.co/videos/preview/mixkit-man-surfing-in-the-ocean-44448-large.mp4"
+                                muted 
+                                loop 
+                                playsinline
+                                loading="lazy"
+                                aria-label="Reel Instagram 7"
+                            ></video>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="instagram__controls">
+                    <button class="carousel-control prev" aria-label="Précédent">❮</button>
+                    <button class="carousel-control next" aria-label="Suivant">❯</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section id="contact" class="cta" aria-label="Contact">
+            <div class="container">
+                <div class="cta__content">
+                    <h2 class="cta__title">Travaillons Ensemble</h2>
+                    <p class="cta__text">
+                        Vous avez un projet en tête ? Discutons de comment donner vie à votre vision.
+                    </p>
+                    
+                    <a href="mailto:contact@corevision.fr" class="btn btn-primary">
+                        Me contacter
+                    </a>
+                    
+                    <div class="cta__info">
+                        <a href="mailto:contact@corevision.fr">contact@corevision.fr</a>
+                        <a href="tel:+33668918589">06 68 91 85 89</a>
+                        <p>Lyon, France</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a 
+                            href="https://instagram.com/alexmrts_visuals" 
+                            class="social-link" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                        >
+                            📸
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Navigation</h3>
+                    <ul role="list">
+                        <li><a href="#hero">Accueil</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#projects">Projets</a></li>
+                        <li><a href="#instagram">Instagram</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Services</h3>
+                    <ul role="list">
+                        <li><a href="#projects">Sport</a></li>
+                        <li><a href="#projects">Corporate</a></li>
+                        <li><a href="#projects">Événementiel</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>Contact</h3>
+                    <ul role="list">
+                        <li><a href="mailto:contact@corevision.fr">contact@corevision.fr</a></li>
+                        <li><a href="tel:+33668918589">06 68 91 85 89</a></li>
+                        <li>Lyon, France</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 CORE Vision. Tous droits réservés. | Alexandre Martins - Vidéaste & Photographe</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    
+    <!-- Main JavaScript Module -->
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

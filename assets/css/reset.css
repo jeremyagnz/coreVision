@@ -1,0 +1,90 @@
+/**
+ * CORE Vision - Reset CSS
+ * Reset et styles de base
+ */
+
+/* Reset de base */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--primary);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Éléments de base */
+img, video {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+input, textarea, select {
+    font-family: inherit;
+}
+
+/* Désactiver les styles par défaut */
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--fire);
+    outline-offset: 4px;
+}
+
+/* Selection */
+::selection {
+    background-color: var(--fire);
+    color: var(--white);
+}
+
+::-moz-selection {
+    background-color: var(--fire);
+    color: var(--white);
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--ocean);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fire);
+}
